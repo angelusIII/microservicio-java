@@ -25,7 +25,7 @@ jobs:
        ./gradlew build sonar -Dsonar.token = ${{ secrets.SONARCLOUD_TOKEN }}
        
    - name: SonarQube Quality Gate check
-     uses: sonarsources/sonarqube-quality-gate-action@master
+     uses: sonarsource/sonarqube-quality-gate-action@master
      env:
        SONAR_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
        SONAR_HOST_URL: https://sonarcloud.io
