@@ -19,7 +19,7 @@ jobs:
        ./gradlew build
        ls -ltra
        
-   - name: SonarCluod Analysis
-     run: |
-       chmod +x gradlew
-       ./gradlew build sonar -Dsonar.token=${{ secrets.SONARCLUOD_TOKEN }}
+   # - name: SonarCluod Analysis
+     # run: |
+       # chmod +x gradlew
+       # ./gradlew build sonar -Dsonar.token=${{ secrets.SONARCLUOD_TOKEN }}
