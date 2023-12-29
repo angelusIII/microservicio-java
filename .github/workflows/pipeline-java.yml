@@ -18,6 +18,11 @@ jobs:
        ./gradlew build
        ls -ltra
        
+   - name: Generate Jacoco Coverage Report
+     run: |
+       chmod +x gradlew
+       ./gradlew jacocoTestReport
+       
    - name: SonarCluod Analysis
      run: |
        chmod +x gradlew
@@ -28,5 +33,7 @@ jobs:
      env: 
        SONAR_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
        SONAR_HOST_URL: https://sonarcloud.io
+       SONAR_QUALITYGATE: 'Cobertura'
+       wait-for-quality-gate: true
      with: 
        scanMetadataReportFile: build/sonar/report-task.txt
