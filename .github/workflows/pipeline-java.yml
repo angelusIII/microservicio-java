@@ -49,3 +49,11 @@ jobs:
        cp $GITHUB_WORKSPACE/build/libs/*.jar .
        chmod 777 *.jar
        ls -lt
+   - name: Docker Build
+     run: | 
+       docker build --tag angelusiii/microservicio-java:latest .
+       docker images
+
+   - name: Docker Push
+     run: |
+       docker push angelusiii/microservicio-java
