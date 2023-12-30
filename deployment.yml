@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: microservicio-java
-        image: dockeruser701/useruoh:latest
+        image: angelusiii/microservicio-java:latest
         ports:
         - containerPort: 8080
